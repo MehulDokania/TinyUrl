@@ -438,9 +438,8 @@ dependencies = [
  "bitflags",
  "byteorder",
  "diesel_derives",
- "mysqlclient-sys",
- "percent-encoding",
- "url",
+ "itoa",
+ "pq-sys",
 ]
 
 [[package]]
@@ -944,16 +943,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "mysqlclient-sys"
-version = "0.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a922eb314fcb6f6541beef90da1049701a44b33894fa96fbaab48b39dc03b32"
-dependencies = [
- "pkg-config",
- "vcpkg",
-]
-
-[[package]]
 name = "num-conv"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1034,6 +1023,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "85eae3c4ed2f50dcfe72643da4befc30deadb458a9b590d720cde2f2b1e97da9"
 dependencies = [
  "zerocopy",
+]
+
+[[package]]
+name = "pq-sys"
+version = "0.7.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "41c852911b98f5981956037b2ca976660612e548986c30af075e753107bc3400"
+dependencies = [
+ "libc",
+ "vcpkg",
 ]
 
 [[package]]

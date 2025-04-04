@@ -2,9 +2,10 @@ use ferris_says::say; // from the previous step
 use std::io::{stdout, BufWriter};
 use rand::{Rng};
 use rand::distr::Alphanumeric;
-use self::models::*;
+use tinyurl_rust::models::*;
 use diesel::prelude::*;
-use diesel_demo::*;
+
+use tinyurl_rust::schema::url_map::dsl::*;
 
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
@@ -42,8 +43,7 @@ fn generate_short_url() -> String {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    use self::schema::url_map::dsl::*;
-    let connection = &mut establish_connection();
+    let connection = &mut tinyurl_rust::establish_connection();
 
     HttpServer::new(|| {
         App::new()
